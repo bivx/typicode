@@ -1,0 +1,37 @@
+<div ng-class="{ 'alert alert-success': messageSuccess}">{{message}}</div>
+<div class="well" ng-hide="messageSuccess">
+
+  <h4>Dodaj posta</h4>
+
+  <form role="form" ng-class="{'submitted': submitted}" ng-submit="sent(user)" name="form" class="clearfix">
+    <div class="col-md-12 form-group">
+      <label class="sr-only" for="name">Imię</label>
+      <input required type="text" class="form-control" id="name" ng-model="user.name" placeholder="Imię">
+    </div>
+
+    <div class="col-md-12 form-group">
+      <label class="sr-only" for="email">Email</label>
+      <input required type="email" class="form-control" id="email" ng-model="user.email" placeholder="Email">
+    </div>
+
+    <div class="col-md-12 form-group">
+      <label class="sr-only" for="email">Firma</label>
+      <input type="text" class="form-control" id="firma" ng-model="user.company" placeholder="Firma">
+    </div>
+
+    <div class="col-md-12 form-group">
+      <label class="sr-only" for="title">Tytuł</label>
+      <input class="form-control" id="title" placeholder="Tytuł" ng-model="user.title">
+    </div>
+
+    <div class="col-md-12 form-group">
+      <label class="sr-only" for="content">Treść</label>
+      <textarea required class="form-control" id="content" placeholder="Treść" ng-model="user.content"></textarea>
+    </div>
+
+    <div class="col-md-12 form-group text-right">
+      <button type="submit" ng-click="submitted= true;" class="btn btn-primary">Wyślij</button>
+    </div>
+
+  </form>
+</div>

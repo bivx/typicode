@@ -1,0 +1,24 @@
+<div class="panel panel-default posts">
+  <div class="panel-heading">{{post.title}}</div>
+  <div class="panel-body">
+    <div class="user-data">
+      <div class="">
+        Imię: {{userName[0].username}}
+      </div>
+      <div class="">
+        email: {{userName[0].email}}
+      </div>
+      <div class="">
+        firma: {{userName[0].company.name}}
+      </div>
+    </div>
+    <p>{{post.body}}</p>
+  </div>
+</div>
+
+<div class="panel panel-default posts" ng-repeat="c in comments">
+  <div class="panel-heading">{{c.email}}, {{c.name}}</div>
+  <div class="panel-body">
+    <p>{{c.body}}</p>
+  </div>
+</div>

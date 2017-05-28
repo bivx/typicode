@@ -1,0 +1,20 @@
+<div class="row">
+  <form class="well" name="form">
+    <div class="fiter-form">
+      <input type="text" ng-pattern="/\w{3}/" ng-model="filterText" name="fiter" class="form-control fiter" placeholder="Fitruj">
+    </div>
+  </form>
+  <div class="col-sm-6 col-lg-3" ng-repeat="i in filterData = (totalItems | filter : {title: filterText}) | limitTo:pageNumber:pageNumber*(page-1)">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3 ng-click="getParams(i)">{{i.title}}</h3>
+        <p>{{i.body.slice(0, 60)}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="footer pagin">
+    <uib-pagination class="pagination-md pagination" total-items="filterData.length" ng-model="page" previous-text="&lsaquo;" next-text="&rsaquo;" items-per-page=pageNumber></uib-pagination>
+  </div>
+</div>
